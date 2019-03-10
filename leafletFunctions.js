@@ -24,8 +24,9 @@ var client;
 var earthquakes;
 function getEarthquakes() {
     client = new XMLHttpRequest();
-    url = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson"
-    client.open('GET',url);
+    var url = "http://developer.cege.ucl.ac.uk:" + httpPortNumber + "/getFormData/" + httpPortNumber;
+    console.log(url)
+    client.open('GET', url);
     client.onreadystatechange = dataResponse;
     client.send();
 }

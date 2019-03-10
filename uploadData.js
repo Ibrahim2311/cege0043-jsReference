@@ -31,7 +31,6 @@ function startDataUpload() {
     processData(postString);
 }
 
-
 var client; // the global variable that holds the request
 function processData(postString) {    
     client = new XMLHttpRequest();
@@ -42,6 +41,7 @@ function processData(postString) {
     client.onreadystatechange = dataUploaded;
     client.send(postString); 
 }
+
 // create the code to wait for the response from the data server, and process the response once it is received
 function dataUploaded() {
     // this function listens out for the server to say that the data is ready - i.e. has state 4
@@ -50,3 +50,4 @@ function dataUploaded() {
         document.getElementById("dataUploadResult").innerHTML = client.responseText;
     }
 }
+
